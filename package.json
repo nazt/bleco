@@ -11,8 +11,10 @@
   "dependencies": {
     "@abandonware/noble": "^1.9.2-10",
     "async": "^3.1.0",
+    "binary-parser": "^1.6.2",
     "circular-json": "^0.5.9",
     "js-sha256": "^0.9.0",
+    "on-change": "^2.1.2",
     "sha256": "^0.2.0",
     "xpc-connect": "^2.0.0"
   }
