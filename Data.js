@@ -15,10 +15,14 @@ module.exports = {
   set: (key, val) => {
     if (store[key] === undefined) {
       store[key] = val;
+      return true;
     } else {
       if (store[key].counter !== val.counter) {
         console.log(`counter: ${store[key].counter}=>${val.counter}`);
         store[key] = val;
+        return true;
+      } else {
+        return false;
       }
     }
   },
