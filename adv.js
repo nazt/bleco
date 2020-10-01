@@ -15,6 +15,9 @@ noble.on("stateChange", (state) => {
 // connectAndSetUp(require('./cobike.jso'))
 
 // let orig = {};
+const chunk = (str, size) => {
+  return str.match(new RegExp(".{1," + size + "}", "g"));
+};
 
 noble.on("discover", (peripheral) => {
   const name = peripheral.advertisement.localName;
@@ -22,8 +25,12 @@ noble.on("discover", (peripheral) => {
   console.log("---------------------------------");
   const result = parser.parse(peripheral.advertisement.serviceData[0].data);
   if (DB.set(result.uuid, result)) {
+    console.log(chunk(result.uuid, 2).join(":"));
     console.log(`item has been set`);
-    sender.publish(`ARTISAN/${result.uuid}`, JSON.stringify(result));
+    sender.publish(
+      `ARTISAN/xiaomi/${result.uuid}/status`,
+      JSON.stringify(result)
+    );
   }
   // store[result.uuid] = result;
 });
