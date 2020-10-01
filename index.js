@@ -14,8 +14,9 @@ noble.on('stateChange', state => {
 
 noble.on('discover', peripheral => {
     const name = peripheral.advertisement.localName;
-    console.log(peripheral)
-    if (peripheral.uuid == '5068315806274ae3932b9cf7b8341b6d') {
+    // console.log(peripheral)
+    console.log('name = ', name);
+    if (name && name.indexOf("cobike--") == 0) {
       console.log('found device');
       console.log("-------------------------------")
       // console.log(peripheral)

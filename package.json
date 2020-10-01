@@ -9,11 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@abandonware/noble": "^1.9.2-3",
+    "@abandonware/noble": "^1.9.2-10",
     "async": "^3.1.0",
     "circular-json": "^0.5.9",
     "js-sha256": "^0.9.0",
     "sha256": "^0.2.0",
-    "xpc-connection": "^0.1.4"
+    "xpc-connect": "^2.0.0"
   }
 }
